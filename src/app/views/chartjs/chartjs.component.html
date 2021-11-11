@@ -1,0 +1,20 @@
+<div class="animated fadeIn">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Breed</th>
+      <th>DateofBirth</th>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let friend of friends">
+      <td><span>{{friend.breed}}</span></td>
+      <td><span>{{friend.dateOfBirth}}</span></td>
+      <td><span>{{friend.id}}</span></td>
+      <td><span>{{friend.name}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
