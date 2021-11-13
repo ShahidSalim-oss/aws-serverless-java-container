@@ -55,7 +55,7 @@ public class PetsController {
         for (int i = 0; i < queryLimit; i++) {
             Pet newPet = new Pet();
             newPet.setId(UUID.randomUUID().toString());
-            newPet.setName(PetData.getRandomName()+" 2 ");
+            newPet.setName(PetData.getRandomName());
             newPet.setBreed(PetData.getRandomBreed());
             newPet.setDateOfBirth(PetData.getRandomDoB());
             outputPets[i] = newPet;
@@ -73,7 +73,14 @@ public class PetsController {
 
         Pet[] outputPets = new Pet[queryLimit];
 
-        for (int i = 0; i < queryLimit; i++) {
+		Pet newPet1 = new Pet();
+        newPet1.setId(UUID.randomUUID().toString());
+        newPet1.setName("************** GREEN ****************");
+        newPet1.setBreed(PetData.getRandomBreed());
+        newPet1.setDateOfBirth(PetData.getRandomDoB());
+        outputPets[0] = newPet1;
+			
+        for (int i = 1; i < queryLimit-1; i++) {
             Pet newPet = new Pet();
             newPet.setId(UUID.randomUUID().toString());
             newPet.setName(PetData.getRandomName());
