@@ -43,8 +43,8 @@ public class PetsController {
         return dbPet;
     }
 
-    @RequestMapping(path = "/pets", method = RequestMethod.GET)
-    public Pet[] listPets(@RequestParam("limit") Optional<Integer> limit, Principal principal) {
+ @RequestMapping(path = "/pets2", method = RequestMethod.GET)
+    public Pet[] listPets2(@RequestParam("limit") Optional<Integer> limit, Principal principal) {
         int queryLimit = 10;
         if (limit.isPresent()) {
             queryLimit = limit.get();
@@ -54,7 +54,35 @@ public class PetsController {
 
         for (int i = 0; i < queryLimit; i++) {
             Pet newPet = new Pet();
-            newPet.setId(UUID.randomUUID().toString()+"   ("+i+")");
+            newPet.setId(UUID.randomUUID().toString());
+            newPet.setName(PetData.getRandomName());
+            newPet.setBreed(PetData.getRandomBreed());
+            newPet.setDateOfBirth(PetData.getRandomDoB());
+            outputPets[i] = newPet;
+        }
+
+        return outputPets;
+    }
+
+    @RequestMapping(path = "/pets", method = RequestMethod.GET)
+    public Pet[] listPets(@RequestParam("limit") Optional<Integer> limit, Principal principal) {
+        int queryLimit = 10;
+        if (limit.isPresent()) {
+            queryLimit = limit.get();
+        }
+
+        Pet[] outputPets = new Pet[queryLimit];
+
+		Pet newPet1 = new Pet();
+        newPet1.setId(UUID.randomUUID().toString());
+        newPet1.setName("************** BLUE ****************");
+        newPet1.setBreed(PetData.getRandomBreed());
+        newPet1.setDateOfBirth(PetData.getRandomDoB());
+        outputPets[0] = newPet1;
+			
+        for (int i = 1; i < queryLimit-1; i++) {
+            Pet newPet = new Pet();
+            newPet.setId(UUID.randomUUID().toString());
             newPet.setName(PetData.getRandomName());
             newPet.setBreed(PetData.getRandomBreed());
             newPet.setDateOfBirth(PetData.getRandomDoB());
