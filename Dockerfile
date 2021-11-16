@@ -1,5 +1,5 @@
-#FROM ubuntu:20.04
-#RUN apt update
+FROM ubuntu:20.04
+RUN apt update
 FROM node:14 as build
 WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
