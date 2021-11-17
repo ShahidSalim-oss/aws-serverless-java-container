@@ -1,10 +1,9 @@
 FROM ubuntu:20.04
 RUN apt update
-FROM node:14 as build
-WORKDIR /usr/local/app
-COPY ./ /usr/local/app/
+FROM node:14 as node
+WORKDIR /app
+COPY . .
 RUN npm install
-RUN npm run build
-FROM nginx:latest
-COPY --from=build /usr/local/app/dist/coreui-free-angular /usr/share/nginx/html
-EXPOSE 80
+RUN npm run build --prod
+FROM nginx:alpine
+COPY --from=node /app/dist/coreui-free-angular /usr/share/nginx/html
