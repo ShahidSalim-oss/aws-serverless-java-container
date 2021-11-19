@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -93,7 +94,7 @@ public class PetsController {
     }
 
     @RequestMapping(path = "/pets/{petId}", method = RequestMethod.GET)
-    public Pet listPets() {
+    public Pet listPets(@PathVariable(value = "id") String id) {
         Pet newPet = new Pet();
         newPet.setId(UUID.randomUUID().toString());
         newPet.setBreed(PetData.getRandomBreed());
