@@ -81,7 +81,7 @@ public class PetsController {
         newPet1.setDateOfBirth(PetData.getRandomDoB());
         outputPets[0] = newPet1;
 			
-        for (int i = 1; i < queryLimit; i++) {
+        for (int i = 1; i < queryLimit-1; i++) {
             Pet newPet = new Pet();
             newPet.setId(UUID.randomUUID().toString());
             newPet.setName(PetData.getRandomName());
