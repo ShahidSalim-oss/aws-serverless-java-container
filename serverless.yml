@@ -24,5 +24,5 @@ functions:
     handler: com.amazonaws.serverless.sample.springboot.StreamLambdaHandler::handleRequest
     events:
       - http:
-          path: pets
-          method: GET
+          path: /{proxy+}
+          method: ANY
