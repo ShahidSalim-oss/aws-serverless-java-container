@@ -1,5 +1,4 @@
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
-RUN mkdir -p /build/convertein-be-test
 COPY pom.xml build/pom.xml
 COPY src /build/src/
 WORKDIR /build
