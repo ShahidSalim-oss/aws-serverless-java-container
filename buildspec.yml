@@ -29,5 +29,5 @@ phases:
 artifacts:
   files:
    - imagedefinitions.json
-   - target/order-service.jar
+   - target/serverless-spring-boot-example-1.0-SNAPSHOT.jar
 
