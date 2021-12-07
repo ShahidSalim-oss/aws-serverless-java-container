@@ -14,7 +14,6 @@ export class Friend {
 @Component({
   selector: 'app-my-single',
   templateUrl: './my-single.component.html',
-  styleUrls: ['./my-single.component.scss']
 })
 export class MySingleComponent implements OnInit {
 
