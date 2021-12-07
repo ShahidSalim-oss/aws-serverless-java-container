@@ -17,6 +17,7 @@ package com.amazonaws.serverless.sample.springboot.controller;
 import com.amazonaws.serverless.sample.springboot.model.Pet;
 import com.amazonaws.serverless.sample.springboot.model.PetData;
 
+import de.logitive.convertien.query.controller.api.Item;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -55,6 +56,7 @@ public class PetsController {
 
         for (int i = 0; i < queryLimit; i++) {
             Pet newPet = new Pet();
+            Item item = new Item();
             newPet.setId(UUID.randomUUID().toString());
             newPet.setName(PetData.getRandomName());
             newPet.setBreed(PetData.getRandomBreed());

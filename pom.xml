@@ -38,6 +38,11 @@
 			<artifactId>lambda-logging</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>de.logitive.convertein</groupId>
+			<artifactId>convertein-be-test</artifactId>
+			<version>0.1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
