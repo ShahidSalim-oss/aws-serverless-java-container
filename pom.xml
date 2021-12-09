@@ -62,7 +62,7 @@
 			<id>aven-group</id>
 			<url>http://convertein.com:8081/repository/snapshots</url>
 			<releases>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
