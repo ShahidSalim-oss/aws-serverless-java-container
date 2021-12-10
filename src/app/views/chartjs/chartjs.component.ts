@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Event } from '../../models/model';
 
 export class Friend {
   constructor(
@@ -17,36 +18,36 @@ export class Friend {
 })
 export class HomeComponent implements OnInit {
 
-  loading:boolean = true;
-  singlefriendloading:boolean=true;
-  friend: Friend;
-  friends: Friend[];
+  loading: boolean = true;
+  singlefriendloading: boolean = true;
+  event: Event;
+  events: Event[];
   constructor(
     private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
-    this.loading=true;
+    this.loading = true;
     this.getFriends();
     this.getFriend();
   }
 
-  getFriends(){
-    this.httpClient.get<any>('https://i8f3wzuv68.execute-api.us-east-1.amazonaws.com/devst/pets').subscribe(
+  getFriends() {
+    this.httpClient.get<any>('http://localhost:8083/convertein/v1/SiOPBmh2jUeZ6VlRp9ZPjA/events?shopId=SiOPBmh2jUeZ6VlRp9ZPjA').subscribe(
       response => {
         console.log(response);
-        this.friends = response;
-        this.loading=false;
+        this.events = response;
+        this.loading = false;
       }
     );
   }
 
-  getFriend(){
-    this.httpClient.get<any>('https://bb5uqeubxi.execute-api.us-east-1.amazonaws.com/dev/pets/2a0ea1a2-43b6-4383-a746-95a12c86c8e0').subscribe(
+  getFriend() {
+    this.httpClient.get<any>('http://localhost:8083/convertein/v1/SiOPBmh2jUeZ6VlRp9ZPjA/events?shopId=SiOPBmh2jUeZ6VlRp9ZPjA').subscribe(
       response => {
         console.log(response);
-        this.friend = response;
-        this.singlefriendloading=false;
+        this.events = response;
+        this.singlefriendloading = false;
       }
     );
   }
