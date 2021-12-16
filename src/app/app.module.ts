@@ -44,6 +44,11 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import {ListModule as EventListModule} from './views/event/list/list.module';
+import { ViewModule as EventViewModule} from './views/event/view/view.module';
+import {ViewComponent} from './views/event/view/view.component';
+import { ListComponent } from './views/audience/list/list.component';
+import { EditComponent } from './views/audience/edit/edit.component';
 
 @NgModule({
   imports: [
@@ -61,7 +66,9 @@ import { ChartsModule } from 'ng2-charts';
     IconModule,
     IconSetModule.forRoot(),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    EventListModule,
+    EventViewModule
   ],
   declarations: [
     AppComponent,
@@ -70,6 +77,8 @@ import { ChartsModule } from 'ng2-charts';
     P500Component,
     LoginComponent,
     RegisterComponent,
+    ListComponent,
+    EditComponent
   ],
   providers: [
     {

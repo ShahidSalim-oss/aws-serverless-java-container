@@ -1,0 +1,16 @@
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let event of events">
+      <td><span>{{event.id}}</span></td>
+      <td><span>{{event.name}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

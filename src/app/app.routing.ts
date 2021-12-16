@@ -81,6 +81,21 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+      },
+      {
+        path: 'events',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./views/event/list/list.module').then(m => m.ListModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':id',
+            loadChildren: () => import('./views/event/view/view.module').then(m => m.ViewModule),
+            pathMatch: 'full'
+          }
+          ]
       }
     ]
   },
