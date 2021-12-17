@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let event of events">
-      <td><span>{{event.id}}</span></td>
+      <td><a [routerLink]="[event.id]">{{event.id}}</a></td>
       <td><span>{{event.name}}</span></td>
     </tr>
     </tbody>

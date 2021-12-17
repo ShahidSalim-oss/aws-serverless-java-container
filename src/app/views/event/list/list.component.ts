@@ -20,11 +20,9 @@ export class ListComponent implements OnInit {
   }
 
   getEvents() {
-    console.log('in list');
-
-    this.backendService.getEvents().subscribe(
+    const apiKey = localStorage.getItem('apiKey');
+    this.backendService.getEvents(apiKey).subscribe(
       response => {
-        console.log(response);
         this.events = response;
         this.loading = false;
       }

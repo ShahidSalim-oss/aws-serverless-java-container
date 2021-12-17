@@ -17,14 +17,13 @@ export class ViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log('in view..');
-    this.getFriends(this.id);
+    this.getEvent(this.id);
   }
 
-  getFriends(id: string) {
-    this.backendService.getEvent(id).subscribe(
+  getEvent(id: string) {
+    const apiKey = localStorage.getItem('apiKey');
+    this.backendService.getEvent(apiKey, id).subscribe(
       response => {
-        console.log(response);
         this.event = response;
         this.loading = false;
       }

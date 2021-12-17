@@ -4,13 +4,19 @@
     <tr>
       <th>IDs</th>
       <th>Name</th>
+      <th>User</th>
+      <th>Item</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td><span>{{event.recommendationId}}</span></td>
+      <td><span>{{event.id}}</span></td>
       <td><span>{{event.name}}</span></td>
+      <td><span>{{event.userId}}</span></td>
+      <td><span>{{event.itemId}}</span></td>
     </tr>
     </tbody>
   </table>
+
+  <pre>{{ event | json }}</pre>
 </div>
