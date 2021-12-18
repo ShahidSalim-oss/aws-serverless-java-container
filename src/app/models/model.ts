@@ -648,6 +648,7 @@ export class GoLiveRequest {
 }
 
 export class TextWidgetTemplate {
+  // tslint:disable-next-line:indent
 	id: string;
 	text: string;
 }

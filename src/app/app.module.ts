@@ -49,6 +49,7 @@ import { ViewModule as EventViewModule} from './views/event/view/view.module';
 import {ViewComponent} from './views/event/view/view.component';
 import { ListComponent } from './views/audience/list/list.component';
 import { EditComponent } from './views/audience/edit/edit.component';
+import { MySingleComponent } from './my-single/my-single.component';
 
 @NgModule({
   imports: [
@@ -78,7 +79,8 @@ import { EditComponent } from './views/audience/edit/edit.component';
     LoginComponent,
     RegisterComponent,
     ListComponent,
-    EditComponent
+    EditComponent,
+    MySingleComponent,
   ],
   providers: [
     {
