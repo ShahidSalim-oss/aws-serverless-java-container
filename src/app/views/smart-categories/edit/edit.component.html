@@ -1,1 +1,25 @@
-<p>edit works!</p>
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+      <th>Shopid</th>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span>{{shop.id}}</span></td>
+      <td><span>{{sponceredItemRule.id}}</span></td>
+      <td><span>{{sponceredItemRule.name}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form (ngSubmit)="onSubmit($event)">
+    <span>{{sponceredItemRule.name}}</span>
+    <input type="text" [(ngModel)]="sponceredItemRule.name" name="name"/>
+    <button type="submit">Send</button>
+  </form>
+
+</div>

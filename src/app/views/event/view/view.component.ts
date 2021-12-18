@@ -12,12 +12,11 @@ import {BackendService} from '../../../services/backend.service';
 export class ViewComponent implements OnInit {
   event: Event;
   loading: boolean = true;
-  id: string;
   constructor(private backendService: BackendService, private route: ActivatedRoute) {  }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.getEvent(this.id);
+    const id: string = this.route.snapshot.paramMap.get('id');
+    this.getEvent(id);
   }
 
   getEvent(id: string) {

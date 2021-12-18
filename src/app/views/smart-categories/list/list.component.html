@@ -1,1 +1,16 @@
-<p>list works!</p>
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rule of shop.sponceredItemRuleList">
+      <td><a [routerLink]="[rule.id]">{{rule.name}}</a></td>
+      <td><span>{{rule.name}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

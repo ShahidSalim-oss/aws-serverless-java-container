@@ -104,6 +104,28 @@ export const routes: Routes = [
             pathMatch: 'full'
           }
           ]
+      },
+      {
+        path: 'shops',
+        children: [
+          {
+            path: '',
+            component: P404Component,
+            data: {
+              title: 'Page 404'
+            }
+          },
+          {
+            path: ':shopId/smart',
+            loadChildren: () => import('./views/smart-categories/list/list.module').then(m => m.ListModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/smart/:id',
+            loadChildren: () => import('./views/smart-categories/edit/edit.module').then(m => m.EditModule),
+            pathMatch: 'full'
+          }
+        ]
       }
     ]
   },

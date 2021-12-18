@@ -11,6 +11,7 @@ export class DefaultLayoutComponent  implements OnInit{
 
   ngOnInit(): void {
     localStorage.setItem('apiKey', 'SiOPBmh2jUeZ6VlRp9ZPjA');
+    localStorage.setItem('shopId', 'clientshop1Id');
   }
 
   toggleMinimize(e) {
