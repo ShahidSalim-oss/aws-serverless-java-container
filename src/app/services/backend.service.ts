@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {CONSOLE_BASE, QUERY_BASE} from '../app.constant';
 import {HttpClient} from '@angular/common/http';
-import {Client, Event, Shop} from '../models/model';
+import {Client, Event, Item, Shop, User} from '../models/model';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -14,19 +14,19 @@ export class BackendService {
 
   // Query
   getItems(apiKey: string) {
-    return this.httpClient.get<Event[]>(QUERY_BASE + '/' + apiKey + '/items?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
+    return this.httpClient.get<Item[]>(QUERY_BASE + '/' + apiKey + '/items?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
   }
 
   getItem(apiKey: string, id: string) {
-    return this.httpClient.get<Event[]>(QUERY_BASE + '/' + apiKey + '/items?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
+    return this.httpClient.get<Item>(QUERY_BASE + '/' + apiKey + '/items/' + id + '?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
   }
 
   getUsers(apiKey: string) {
-    return this.httpClient.get<Event[]>(QUERY_BASE + '/' + apiKey + '/users?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
+    return this.httpClient.get<User[]>(QUERY_BASE + '/' + apiKey + '/users?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
   }
 
   getUser(apiKey: string, id: string) {
-    return this.httpClient.get<Event[]>(QUERY_BASE + '/' + apiKey + '/users' + id + '?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
+    return this.httpClient.get<User>(QUERY_BASE + '/' + apiKey + '/users/' + id + '?shopId=SiOPBmh2jUeZ6VlRp9ZPjA');
   }
 
   getEvents(apiKey: string) {

@@ -46,9 +46,10 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import {ListModule as EventListModule} from './views/event/list/list.module';
 import { ViewModule as EventViewModule} from './views/event/view/view.module';
-import {ViewComponent} from './views/event/view/view.component';
-import { ListComponent } from './views/audience/list/list.component';
-import { EditComponent } from './views/audience/edit/edit.component';
+import { ListModule as UserListModule} from './views/user/list/list.module';
+import { ViewModule as UserViewModule} from './views/user/view/view.module';
+import { ListModule as ItemListModule} from './views/item/list/list.module';
+import { ViewModule as ItemViewModule} from './views/item/view/view.module';
 import { MySingleComponent } from './my-single/my-single.component';
 
 @NgModule({
@@ -69,7 +70,11 @@ import { MySingleComponent } from './my-single/my-single.component';
     BrowserModule,
     HttpClientModule,
     EventListModule,
-    EventViewModule
+    EventViewModule,
+    UserListModule,
+    UserViewModule,
+    ItemListModule,
+    ItemViewModule
   ],
   declarations: [
     AppComponent,
@@ -78,8 +83,6 @@ import { MySingleComponent } from './my-single/my-single.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    ListComponent,
-    EditComponent,
     MySingleComponent,
   ],
   providers: [

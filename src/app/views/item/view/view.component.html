@@ -1,1 +1,22 @@
-<p>view works!</p>
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+      <th>IDs</th>
+      <th>Name</th>
+      <th>User</th>
+      <th>Item</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span>{{item.id}}</span></td>
+      <td><span>{{item.name}}</span></td>
+      <td><span>{{item.brand}}</span></td>
+      <td><span><img src='{{item.image_url}}' height='150'></span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pre>{{ item | json }}</pre>
+</div>

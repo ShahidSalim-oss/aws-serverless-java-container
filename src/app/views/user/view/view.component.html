@@ -1,1 +1,22 @@
-<p>view works!</p>
+<div class="animated fadeIn" *ngIf="!loading">
+  <table class="table table-bordered table-striped" >
+    <thead>
+    <tr>
+      <th>IDs</th>
+      <th>Name</th>
+      <th>User</th>
+      <th>Item</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span>{{user.id}}</span></td>
+      <td><span>{{user.name}}</span></td>
+      <td><span>{{user.firstname}}</span></td>
+      <td><span>{{user.lastname}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pre>{{ user | json }}</pre>
+</div>

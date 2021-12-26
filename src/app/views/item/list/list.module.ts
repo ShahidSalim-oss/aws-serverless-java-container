@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ListRoutingModule } from './list-routing.module';
+import {ListRoutingModule, routedComponents} from './list-routing.module';
+import {ListComponent} from './list.component';
 
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     ListRoutingModule
-  ]
+  ],
+  declarations: [ ListComponent, routedComponents ]
 })
+
 export class ListModule { }

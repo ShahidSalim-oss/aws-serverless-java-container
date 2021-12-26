@@ -91,21 +91,6 @@ export const routes: Routes = [
         loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
       },
       {
-        path: 'events',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/event/list/list.module').then(m => m.ListModule),
-            pathMatch: 'full'
-          },
-          {
-            path: ':id',
-            loadChildren: () => import('./views/event/view/view.module').then(m => m.ViewModule),
-            pathMatch: 'full'
-          }
-          ]
-      },
-      {
         path: 'shops',
         children: [
           {
@@ -123,6 +108,36 @@ export const routes: Routes = [
           {
             path: ':shopId/smart/:id',
             loadChildren: () => import('./views/smart-categories/edit/edit.module').then(m => m.EditModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/users',
+            loadChildren: () => import('./views/user/list/list.module').then(m => m.ListModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/users/:id',
+            loadChildren: () => import('./views/user/view/view.module').then(m => m.ViewModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/items',
+            loadChildren: () => import('./views/item/list/list.module').then(m => m.ListModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/items/:id',
+            loadChildren: () => import('./views/item/view/view.module').then(m => m.ViewModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/events',
+            loadChildren: () => import('./views/event/list/list.module').then(m => m.ListModule),
+            pathMatch: 'full'
+          },
+          {
+            path: ':shopId/events/:id',
+            loadChildren: () => import('./views/event/view/view.module').then(m => m.ViewModule),
             pathMatch: 'full'
           }
         ]

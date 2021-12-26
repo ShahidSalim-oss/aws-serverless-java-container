@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Event} from '../../../models/model';
 import {ActivatedRoute} from '@angular/router';
 import {BackendService} from '../../../services/backend.service';
