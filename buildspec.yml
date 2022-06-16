@@ -6,9 +6,9 @@ phases:
     commands:
       - echo Logging in to Amazon ECR....
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 534030821312.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 774025244507.dkr.ecr.us-east-1.amazonaws.com
      # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 534030821312.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - REPOSITORY_URI=534030821312.dkr.ecr.us-east-1.amazonaws.com/springboot-nolambda
+      - REPOSITORY_URI=774025244507.dkr.ecr.us-east-1.amazonaws.com/springboot-green
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
