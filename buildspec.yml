@@ -6,8 +6,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR....
       - aws --version
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/j3p2t2l7
-     # - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 774025244507.dkr.ecr.us-east-1.amazonaws.com
+      #- aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 774025244507.dkr.ecr.us-east-1.amazonaws.com
      # - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 534030821312.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=public.ecr.aws/j3p2t2l7/green
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
