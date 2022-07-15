@@ -9,8 +9,8 @@ phases:
       #dev-id
       #- aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 774025244507.dkr.ecr.us-west-2.amazonaws.com
       #prod-id
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 534030821312.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=534030821312.dkr.ecr.us-east-1.amazonaws.com/pet1
+      #- aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 534030821312.dkr.ecr.us-east-1.amazonaws.com
+      - REPOSITORY_URI=public.ecr.aws/j3p2t2l7/blue
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
