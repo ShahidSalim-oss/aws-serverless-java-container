@@ -76,7 +76,7 @@ public class PetsController {
 
 		Pet newPet1 = new Pet();
         newPet1.setId(UUID.randomUUID().toString());
-        newPet1.setName("GREENUPDATED");
+        newPet1.setName("GREENUPDATEDAGAIN");
         newPet1.setBreed(PetData.getRandomBreed());
         newPet1.setDateOfBirth(PetData.getRandomDoB());
         outputPets[0] = newPet1;
